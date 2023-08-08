@@ -6,3 +6,4 @@ resource "aws_vpc" "main" {
     Owner = "yedukondalu.yanam@cloudeq.com"
     purpose = "Terraform jenkins test"
 }
+}
