@@ -40,21 +40,26 @@ pipeline {
             }
         }
 
-        stage('Terraform Apply') {
-               when{
+        //stage('Terraform Apply') {
+             //  when{
+            //     expression {
+           //                changeset "main/**"
+         //       }         
+        // }
+       //     steps {
+      //          sh 'terraform apply -auto-approve'
+     //       }
+    //    }   
+
+         stage('Terraform destroy') {
+           when{
                  expression {
                            changeset "main/**"
                 }         
          }
-            steps {
-                sh 'terraform apply -auto-approve'
-            }
-        }   
-
-        // stage('Terraform destroy') {
-        //     steps {
-        //         sh 'terraform destroy -auto-approve'
-        //     }
+          steps {
+             sh 'terraform destroy -auto-approve'
+        }
         // }  
 //
     }
