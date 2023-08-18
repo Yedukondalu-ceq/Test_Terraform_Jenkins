@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               git branch: 'main', changelog: false, credentialsId: 'Git_credentials', poll: false, url: 'https://github.com/srinivasarao-ceq/jenkins_final-assignment.git'
+               git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Yedukondalu-ceq/Test_Terraform_Jenkins.git'
             }
         }
          stage('aws') {
@@ -33,7 +33,7 @@ pipeline {
                  expression {
                            return env.CHANGE_ID != null
                    }
-             //  changeset "[https://github.com/srinivasarao-ceq/jenkins_final-assignment.git]"
+             //  changeset "[https://github.com/Yedukondalu-ceq/Test_Terraform_Jenkins.git]"
              }
             steps {
                  sh 'terraform plan'
