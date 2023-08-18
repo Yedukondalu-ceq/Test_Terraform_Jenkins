@@ -56,11 +56,10 @@ pipeline {
                  expression {
                            changeset "main/**"
                 }         
-         }
-          steps {
+           }
+           steps {
              sh 'terraform destroy -auto-approve'
-        }
-        // }  
-//
-    
+           }
+        } 
+    }
 }
